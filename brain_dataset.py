@@ -6,8 +6,7 @@ import albumentations as A
 from torch.utils.data import Dataset
 import torchvision.transforms as tt
 
-# This BrainDataset class is designed to be used with PyTorch's DataLoader 
-# to efficiently load and preprocess data for training, validation, or testing in a deep learning pipeline. 
+# This function is used to create a dataset
 class BrainDataset(Dataset):
     def __init__(self, df, transform=None):
         self.df = df
@@ -53,6 +52,7 @@ def set_seed(seed=0):
 
 set_seed()
 
+# This function is used to print out the model architecture and the number of parameters
 def print_model_architecture(model):
     print(model)
     total_params = sum(p.numel() for p in model.parameters())
